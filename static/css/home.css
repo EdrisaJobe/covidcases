@@ -1,0 +1,58 @@
+body{
+    font-family: "Varela Round"; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: "Varela Round"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: "Varela Round"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Varela Round"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Varela Round"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+}
+
+nav{
+    position: sticky;
+    box-sizing: border-box;
+    border-bottom: 3px solid black;
+}
+
+.navbar-brand{
+    padding-left: 20px;
+    font-size: 24px;
+}
+
+.what{
+    margin:0 auto;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 5px;
+    border-radius: 5px;
+    width: 80%;
+    margin-bottom: 50px;
+}
+
+
+
+#cases{
+    background-color: rgba(243, 243, 243, 0.966);
+    height: 80vh;
+}
+
+
+li:last-child{
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px 2px white;
+    margin-right: 20px;
+    padding-right: 0px;
+}
+
+li{
+    padding-right: 40px;
+
+}
+
+.card{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 100px;
+}
+
+h5{
+    text-align: left;
+}
