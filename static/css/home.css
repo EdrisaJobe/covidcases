@@ -13,6 +13,11 @@ nav{
     font-size: 24px;
 }
 
+h1{
+    padding-top: 20px;
+}
+
+
 .what{
     margin:0 auto;
     padding: 0;
@@ -22,7 +27,9 @@ nav{
     box-shadow: 0px 0px 5px 5px;
     border-radius: 5px;
     width: 80%;
-    margin-bottom: 50px;
+    margin-bottom:50px;
+    padding-bottom: 20px;
+    
 }
 
 
@@ -55,4 +62,10 @@ li{
 
 h5{
     text-align: left;
+}
+
+@media (max-width: 700px){
+    .what{
+        margin-top: 820px;
+    }
 }
