@@ -1,7 +1,10 @@
 from django.shortcuts import render
+
+# math formation/visualization
 import pandas as pd
 import requests
 import folium
+import json
 
 # Create your views here.
 def index(request):
@@ -14,7 +17,7 @@ def index(request):
     # checking to make sure data is retrievable
     while data:
         try:
-            res = requests.get('https://thevirustracker.com/free-api?global=stats')
+            res = requests.get('https://api.covid19api.com/summary')
             summary = res.json()['Global']
             data = False
         except:
@@ -23,61 +26,22 @@ def index(request):
 
 def map(request):
     
-    # getting the csv of the countries
-    cases = pd.read_csv('countries.csv')
+    # reading the csv file and stting a display
+    data = pd.read_csv('countries.csv')
+    pd.set_option('display.max_rows',3)
     
-    # api request -> to json
-    req = requests.get("https://thevirustracker.com/free-api?global=stats")
-    global_cases = req.json()
-    print(global_cases)
+    # folium map bootup information
+    m = folium.Map(location=[0,0], tiles='cartodbpositron', zoom_start=3)
     
-    # data frame for map
-    df = []
-    for j in range(1,len(global_cases['countryitems'][0])):
-        df.append([global_cases['countryitems'][0][f'{j}']['title'],
-                   global_cases['countryitems'][0][f'{j}']['total_cases']])
-    
-    # setting variables for the data frame
-    df_covid = pd.DataFrame(df,columns=['Country','Total Case'])
-    
-    # giving the countries a new name
-    df_covid.replace('USA', "United States of America", inplace = True)
-    df_covid.replace('Tanzania', "United Republic of Tanzania", inplace = True)
-    df_covid.replace('Democratic Republic of Congo', "Democratic Republic of the Congo", inplace = True)
-    df_covid.replace('Congo', "Republic of the Congo", inplace = True)
-    df_covid.replace('Lao', "Laos", inplace = True)
-    df_covid.replace('Syrian Arab Republic', "Syria", inplace = True)
-    df_covid.replace('Serbia', "Republic of Serbia", inplace = True)
-    df_covid.replace('Czechia', "Czech Republic", inplace = True)
-    df_covid.replace('UAE', "United Arab Emirates", inplace = True)
-    
-    # countries collection
-    url = 'https://raw.githubusercontent.com/python-visualization/folium/master/examples/data'
-    country_cases = f'{url}/world-countries.json'
-    
-    m = folium.Map(zoom_start=2)
-    
-    # adding Choropleth layer for the map using the above url
-    folium.Choropleth(
-        geo_data=country_cases,
-        name='choropleth',
-        data=df._covid,
-        colums=['Country','Total Case'],
-        key_on='feature.properties.name',
-        fill_color='PuRd',
-        nan_fill_color='white' 
-    ).add_to(m)
-    folium.LayerControl().add_to(m)
-    
-    # looping through the data and appending it to map 'm'
-    for lat,lon,name, in zip(cases['latitude'],cases['longitude'],cases['name']):
-        folium.Circle(
-            redius=100,
-            location=[lat,lon],
-            popup=name,
-            fill=True,
-            fill_color='red',
-        ).add_to(m)
+    # looping through the csv and displaying each individual data based on indexing
+    for i in range(0, len(data)):
+        
+        # getting country coords
+        lat = float(data.iloc[i]['Latitude'])
+        lon = float(data.iloc[i]['Longitude'])
+        
+        # grabbing the lat and lon for all country location and setting a circle marker
+        folium.CircleMarker([lat,lon], popup=data.iloc[i]['Deaths'], radius=5, color='red', fill=True).add_to(m)
         
     m = m._repr_html_()
     
@@ -91,8 +55,8 @@ def map(request):
     while data:
         try:
             res = requests.get('https://api.covid19api.com/summary')
-            json = res.json()
-            countries = json['Countries']
+            json_data = res.json()
+            countries = json_data['Countries']
             data=False
         except:
             data=True
