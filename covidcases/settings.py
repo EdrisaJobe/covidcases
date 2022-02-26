@@ -24,7 +24,7 @@ IMG_DIR = Path(BASE_DIR, 'static')
 SECRET_KEY = 'django-insecure-_r1=rhj5pimf#ruc@fw5e0*m6k@8ks48c*jw4lvo@2^hsm&5ga'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1:8000', 'globalcovidcases.com', '*.globalcovidcases.com', '*']
 
