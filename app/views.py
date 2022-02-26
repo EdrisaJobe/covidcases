@@ -41,7 +41,7 @@ def map(request):
         lon = float(data.iloc[i]['Longitude'])
         
         # grabbing the lat and lon for all country location and setting a circle marker
-        folium.CircleMarker([lat,lon], popup=data.iloc[i]['Deaths'], radius=5, color='red', fill=True).add_to(m)
+        folium.CircleMarker([lat,lon], popup=int(data.iloc[i]['Deaths']), radius=5, color='red', fill=True).add_to(m)
         
     m = m._repr_html_()
     
