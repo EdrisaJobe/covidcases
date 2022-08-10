@@ -1,4 +1,4 @@
-# About covidcases
+# About GlobalCovidCases
 Main purpose is to display the number of deaths, confirmed, newly confirmed and global vaccination status. This site has really helped me expand my knowledge on how to gather and manipulate data for my own personal use, I managed to link folium
 a package for Python to display the number of covid cases on a Leaflet map with extreme accuracy while at the same time using a covid tacking base API. The website fully updates in realtime and displays all current
 data regarding the virus.
