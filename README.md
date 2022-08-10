@@ -14,7 +14,7 @@ HTML   | Stores the Home/About pages, also used it to template tag all the neces
 Backend :toolbox:| Description|
 -------|------------|
 Django | Django is a well known Python backend web framework which I used to gather all the necessary information. Mainly used for template tagging and connecting all the HTML pages as well as migrating my project to a database. Also used as a form of site/token protection from malicious intruders.
-Python | Scripting language, used alongside Django to apply my logic. Python was used primarily on this project to implement all the key functions of the website. Although not made for web development, alongside Django they make a great duo.
+Python | All the script was written in Python alongside Django for backend implementation primarily functions regarding the logic for how the red dots are placed onto the Leaflet map while at the same time using Python to grab an API to display up to date numbers (https://covidtracking.com/data/api).
 Openweather| Grabbed all the necessary information from [OpenweatherAPI](https://openweathermap.org/api) which is very popular and updates frequently with the latest up-to-date weather information.
 
 Libraries :books:| Description|
