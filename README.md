@@ -3,7 +3,7 @@ Main purpose is to display the number of deaths, confirmed, newly confirmed and 
 a package for Python to display the number of covid cases on a Leaflet map with extreme accuracy while at the same time using a csv to display the red dots. The website fully updates in realtime and displays all current data regarding the virus.
 
 [![Link - Global Covid Cases](https://img.shields.io/badge/Link-Global_Covid_Cases-3693F3?style=for-the-badge&logo=<svg+role%3D"img"+viewBox%3D"0+0+24+24"+xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"><title>iCloud<%2Ftitle><path+d%3D"M13.762+4.29a6.51+6.51+0+0+0-5.669+3.332+3.571+3.571+0+0+0-1.558-.36+3.571+3.571+0+0+0-3.516+3A4.918+4.918+0+0+0+0+14.796a4.918+4.918+0+0+0+4.92+4.914+4.93+4.93+0+0+0+.617-.045h14.42c2.305-.272+4.041-2.258+4.043-4.589v-.009a4.594+4.594+0+0+0-3.727-4.508+6.51+6.51+0+0+0-6.511-6.27z"%2F><%2Fsvg>)](https://www.globalcovidcases.com)
-# Technology Used :hammer_and_wrench:
+## Technology Used :hammer_and_wrench:
 
 Frontend :gear:| Description|
 -------|------------|
@@ -29,3 +29,11 @@ Web-services :spider_web:| Description|
 -------|------------|
 Heroku | Heroku is a cloud platform for hosting and maintaining website information which I used to later connect the platform with GoDaddy. 
 GoDaddy| Domain was registered from GoDaddy alongside all DNS setup.
+
+# Visual Example
+<img width="1674" alt="Screen Shot 2023-01-11 at 3 00 30 PM" src="https://user-images.githubusercontent.com/48189579/211905982-d9e55abc-de65-4004-ac10-a79ca059b22e.png">
+
+<img width="1674" alt="Screen Shot 2023-01-11 at 2 59 52 PM" src="https://user-images.githubusercontent.com/48189579/211906003-96d262a3-093b-4432-bd66-1b3fb07fb8b0.png">
+
+<img width="1674" alt="Screen Shot 2023-01-11 at 3 00 45 PM" src="https://user-images.githubusercontent.com/48189579/211906044-7a58f110-19b5-4bf1-8167-bec1457111ce.png">
+
